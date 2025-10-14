@@ -1,0 +1,409 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+:root {
+    --primary-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    --header-bg: rgba(255, 255, 255, 0.95);
+    --text-color: #2c3e50;
+    --accent-color: #3498db;
+    --border-color: #bdc3c7;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --text-font: 'Georgia', 'Times New Roman', serif;
+}
+
+body {
+    background: var(--primary-bg);
+    font-family: var(--text-font);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding-top: 110px; 
+}
+
+
+.main-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+    background: var(--header-bg);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
+}
+
+
+.top-bar {
+    background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 55px 30px;
+    height: 90px;          
+    overflow: visible;     
+}
+
+
+.logo_container {
+    flex-shrink: 0;
+    margin-right: -190px;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: var(--shadow); 
+}
+
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.title-text {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+    background: var(--header-bg);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 10px 18px; 
+    border-radius: 20px; 
+    transition: all 0.3s ease;
+    display: block;
+}
+
+nav a:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+hr {
+    border: none;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    margin: 30px 0;
+}
+
+
+h1, h2 {
+    text-align: center;
+    margin: 30px 0 20px 0;
+    color: var(--text-color);
+}
+
+.comeco {
+    font-size: 2.2rem;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+}
+
+.pergunta {
+    text-align: center;
+    font-size: 1.3rem;
+    font-style: italic;
+    margin: 30px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.introdução {
+    font-size: 2rem;
+    color: var(--accent-color);
+    border-bottom: 3px solid var(--accent-color);
+    padding-bottom: 10px;
+    display: inline-block;
+    width: 100%;
+}
+
+.novo {
+    font-size: 2rem;
+    color: var(--accent-color);
+    border-bottom: 3px solid var(--accent-color);
+    padding-bottom: 10px;
+    display: inline-block;
+    width: 100%;    
+}
+
+.diferença {
+    background: white;
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    font-size: 1.1rem;
+    text-align: justify;
+    border-left: 5px solid var(--accent-color);
+}
+
+.titulo_maravilha {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 50px 0 30px 0;
+    padding: 20px;
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    color: white;
+    border-radius: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow);
+}
+
+.wonders {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    margin: 40px 0 20px 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--accent-color);
+}
+
+
+figure {
+    text-align: center;
+    margin: 30px 0;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+figure img:hover {
+    transform: scale(1.05);
+}
+
+figcaption {
+    margin-top: 15px;
+    font-style: italic;
+    color: #7f8c8d;
+    font-size: 1rem;
+}
+
+
+.descricao {
+    background: white;
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    font-size: 1.1rem;
+    text-align: justify;
+    line-height: 1.7;
+    border-left: 5px solid var(--accent-color);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+strong {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+em {
+    color: #e74c3c;
+    font-style: italic;
+}
+
+.rodape {
+    background: linear-gradient(45deg, #2c3e50, #34495e);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 50px;
+    border-radius: 15px 15px 0 0;
+}
+
+.rodape p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+.rodape a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.rodape a:hover {
+    color: #5dade2;
+    text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 100px; 
+    }
+    
+    .top-bar {
+        height: 50px;
+        padding: 8px 15px;
+    }
+    
+    .title-text {
+        font-size: 1.4rem;
+    }
+    
+    .logo {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .menu {
+        padding: 6px 15px;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    nav a {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+    }
+    
+    .comeco {
+        font-size: 1.8rem;
+    }
+    
+    .titulo_maravilha {
+        font-size: 2rem;
+    }
+    
+    .wonders {
+        font-size: 1.5rem;
+    }
+    
+    .descricao, .diferença {
+        padding: 20px;
+        margin: 20px 10px;
+    }
+    
+    figure {
+        margin: 20px 10px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 90px; 
+    }
+    
+    .top-bar {
+        height: 45px;
+        padding: 6px 10px;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+    }
+    
+    .logo_container {
+        margin-right: 0;
+    }
+    
+    .title-text {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+    
+    .logo {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .menu {
+        padding: 4px 10px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    nav a {
+        font-size: 0.75rem;
+        padding: 3px 6px;
+    }
+    
+    .comeco {
+        font-size: 1.5rem;
+    }
+    
+    .titulo_maravilha {
+        font-size: 1.7rem;
+    }
+    
+    .wonders {
+        font-size: 1.3rem;
+    }
+}
