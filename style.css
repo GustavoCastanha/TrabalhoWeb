@@ -56,8 +56,12 @@ body {
   position: absolute;
   top: -30px; 
   left: 20px;
+  text-align: center;  
+  margin: 30px 0;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
 }
-
 .logo {
     width: 120px;
     height: auto;
@@ -66,7 +70,6 @@ body {
     position: relative;
     
 }
-
 
 .logo:hover {
     transform: scale(1.1);
@@ -185,10 +188,10 @@ h1, h2 {
     font-size: 2.5rem;
     text-align: center;
     margin: 50px 0 30px 0;
-    padding: 20px;
+    padding: 10px;
     background: linear-gradient(45deg, #ff6b6b, #ee5a24);
     color: white;
-    border-radius: 15px;
+    border-radius: 10px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     box-shadow: var(--shadow);
 }
@@ -204,7 +207,6 @@ h1, h2 {
     border-left: 5px solid var(--accent-color);
 }
 
-
 figure {
     text-align: center;
     margin: 30px 0;
@@ -212,6 +214,7 @@ figure {
     padding: 20px;
     border-radius: 15px;
     box-shadow: var(--shadow);
+    
 }
 
 figure img {
@@ -403,4 +406,70 @@ em {
     .wonders {
         font-size: 1.3rem;
     }
+}
+
+/* 1. ESTILO DO CARD PRINCIPAL */
+.container-mapa-e-imagem {
+    /* --- Estilos do Card --- */
+    background: #ffffff; /* Fundo branco para o card */
+    border-radius: 15px; /* Bordas bem arredondadas */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidade */
+    padding: 20px; /* Espaçamento interno para o conteúdo não colar na borda */
+    border: 1px solid #e7e7e7; /* Borda sutil (opcional) */
+
+    /* --- Layout Flexbox --- */
+    display: flex; /* ATIVA O MODO LADO A LADO */
+    gap: 20px; /* Espaço entre a imagem e o mapa */
+    align-items: stretch; /* Garante que ambos tenham a mesma altura */
+    margin-bottom: 30px; /* Espaço abaixo do card */
+}
+
+/* 2. AJUSTES PARA A IMAGEM DENTRO DO CARD */
+.container-mapa-e-imagem .imagem_principal {
+    flex: 1; /* Faz a imagem ocupar metade do espaço disponível */
+    margin: 0; /* Remove margens padrão que podem quebrar o layout */
+    padding: 0; /* Remove preenchimento padrão */
+    display: flex;
+    flex-direction: column;
+}
+
+.imagem_principal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 10px; /* Arredonda os cantos da imagem */
+    flex-grow: 1; /* Faz a imagem crescer para ocupar o espaço vertical */
+}
+
+.imagem_principal figcaption {
+    padding-top: 10px; /* Espaço entre a imagem e a legenda */
+}
+
+
+/* 3. AJUSTES PARA O MAPA DENTRO DO CARD */
+.container-mapa-e-imagem .mapa-container {
+    flex: -10; /* Faz o mapa ocupar a outra metade do espaço */
+    min-height: 350px; /* Altura mínima para o mapa ser visível */
+    border-radius: 10px; /* Arredonda os cantos do mapa */
+    overflow: hidden; /* Essencial para o iframe respeitar as bordas arredondadas */
+}
+
+.mapa-container iframe {
+    width: 240px;
+    height: 500px;
+    border: none; /* Remove a borda padrão do iframe */
+}
+
+
+/* 4. RESPONSIVIDADE (PARA CELULAR) */
+@media (max-width: 768px) {
+    .container-mapa-e-imagem {
+        flex-direction: column; /* Coloca o mapa embaixo da imagem */
+    }
+}
+
+.mapa-container iframe {
+    width: 100%;    /* Ocupa toda a largura do container pai */
+    height: 100%;   /* Ocupa toda a altura do container pai */
+    border: none;   /* Remove qualquer borda */
 }
