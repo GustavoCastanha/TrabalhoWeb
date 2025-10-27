@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -476,4 +475,156 @@ em {
     border: none;   /* Remove qualquer borda */
 }
 
+.pagina {
+   
+}
 
+.tema {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    display: flex;
+}
+
+/* Estiliza o ícone da lua (tema escuro) */
+.tema #lua {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 0.5rem;
+}
+
+/* Estiliza o ícone do sol (tema claro) */
+.tema #sol {
+    font-size: 24px;
+    color: #ffd700; /* Amarelo mais suave */
+    cursor: pointer;
+}
+
+/* Adiciona um efeito de hover nos ícones */
+.tema #lua:hover,
+.tema #sol:hover {
+    transform: scale(1.5);
+    transition: transform 0.5s ease;
+}
+
+
+.claro.escuro {
+    --primary-bg: #1a1a1a; /* Fundo principal escuro e sólido */
+    --header-bg: rgba(26, 26, 26, 0.95);
+    --text-color: #f0f0f0;
+    --accent-color: #060708;
+    --border-color: #2c3e50;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Fundo geral e textos */
+.claro.escuro body {
+    background: var(--primary-bg);
+    color: var(--text-color);
+}
+
+/* Cabeçalho e menu */
+.claro.escuro .main-header,
+.claro.escuro .menu {
+    background: var(--header-bg);
+    box-shadow: var(--shadow);
+}
+
+.claro.escuro .top-bar {
+    background: linear-gradient(45deg, #323537, #133b4f);
+    /* Removido: background: linear-gradient(45deg, #283e51, #485563); */
+    color: #f0f0f0;
+}
+
+.claro.escuroe nav a {
+    color: var(--text-color);
+}
+
+.claro.escuro nav a:hover {
+    background: var(--accent-color);
+    color: #e80303;
+}
+
+/* Cards, descrições, figuras e blocos de texto */
+.claro.escuro .descricao,
+.claro.escuro .diferença,
+.claro.escuro figure,
+.claro.escuro .container-mapa-e-imagem,
+.claro.escuro .container-mapa-e-imagem-colosso {
+    background: #1e1e1e;
+    color: var(--text-color);
+    border-color: var(--border-color);
+    box-shadow: var(--shadow);
+}
+
+/* Legendas e detalhes */
+.claro.escuro figcaption {
+    color: #b0b0b0;
+}
+
+.claro.escuro strong {
+    color: #e57373;
+}
+
+.claro.escuro em {
+    color: #e57373;
+}
+
+/* Títulos */
+.claro.escuro h1,
+.claro.escuro h2,
+.claro.escuro .wonders,
+.claro.escuro .titulo_maravilha {
+    color: var(--text-color);
+    text-shadow: none;
+}
+.claro.escuro .diferença a {
+    color: white;
+    
+}
+
+.claro.escuro .diferença a:hover {
+    color: #e57373;
+}
+
+.claro.escuro .wonders{   /* muda a cor dos titulos das maravilhas no modo escuro  EX: Cristo Redentor*/
+    color: rgb(0, 0, 0)
+}
+
+.claro.escuro .titulo_maravilha {     /*muda a cor dos titulos e do fundo das maravilhas moderno/antigo no modo escuro*/
+    background: linear-gradient(45deg, #484e51, #060809);
+    color: #aa5353;
+}
+
+.claro.escuro .introdução {  /* muda a cor do subtituilo moderno/antigo  no modo escuro*/
+    color : #e57373;
+}
+.claro.escuro .pergunta {
+    background: linear-gradient(45deg, #484e51, #060809);
+}
+
+.claro.escuro .pergunta  {
+    color: white
+}
+
+.claro.escuro .comeco {
+    font-size: 2.2rem;
+    background: linear-gradient(45deg, #484e51, #060809);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+}
+
+.claro.escuro .rodape {
+    background: linear-gradient(45deg, #323537, #133b4f);
+    color: #e57373;
+}
+
+.claro.escuro .rodape a {
+    color: black
+}
+
+.claro.escuro .rodape a:hover {
+    color: #e57373;
+}
