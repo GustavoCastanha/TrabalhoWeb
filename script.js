@@ -1,3 +1,21 @@
+function handleLogin(event) {
+    // Impede o envio padrão do formulário
+    event.preventDefault(); 
+
+    const usuario = document.getElementById('username').value;
+    const senha = document.getElementById('password').value;
+
+    // Lógica de Verificação: Se as credenciais estiverem corretas...
+    if (usuario === "admin" && senha === "123") {
+        
+        // Redireciona para a página de conteúdo principal (index.html)
+        window.location.href = "index.html"; 
+        
+    } else {
+        alert("Usuário ou senha incorretos.");
+    }
+}
+
 const lua = document.getElementById("lua");
 const sol = document.getElementById("sol");
 const pagina = document.querySelector(".pagina");
@@ -106,3 +124,4 @@ btnFechar.addEventListener("click", () => {
 
 // 4. Inicializa a lista de comentários ao carregar a página
 document.addEventListener("DOMContentLoaded", renderizarComentarios);
+
