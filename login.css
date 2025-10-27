@@ -271,3 +271,62 @@ body {
 .registrar-link a:hover {
     text-decoration: underline;
 }
+
+
+.info {
+    position: fixed; /* Tira o elemento do fluxo normal e o fixa na tela */           
+    bottom: 20px;    /* Distância da parte de baixo da tela */
+    left: 20px; 
+    cursor: pointer;         /* Distância do lado esquerdo da tela   /* Garante que o ícone fique na frente de outros elementos */ 
+}
+
+.dados {
+    font-size: 28px; /* <-- Altere aqui para aumentar ou diminuir o ícone */
+    display: block;
+    line-height: 1;
+}
+
+.info::after {
+    content: attr(data-tooltip); /* Pega o texto do atributo 'data-tooltip' no HTML */
+    position: absolute;
+    bottom: 120%; /* Posiciona o balão ACIMA do ícone */
+    left: 0;      /* Alinha o início do balão com o início do ícone */
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(10px); /* Começa um pouco para baixo */
+    white-space: normal;    /* 1. Permite que o texto tenha múltiplas linhas */
+    max-width: 250px;       /* 2. Define a largura máxima antes do texto quebrar */
+    text-align: left;
+    
+
+}
+
+.info::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 10px;
+    border-width: 6px;   
+    border-style: solid;   
+    border-color: #333 transparent transparent transparent;       
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(10px);   
+}
+
+.info:hover::after,
+.info:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Sobe suavemente para a posição final */
+    
+}
