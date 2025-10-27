@@ -3,13 +3,23 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            
           <!--essa linha esta bugando a pagina de login, -->
         <link rel="stylesheet" href="style.css"/>
         <link rel="icon" type="logo.png" href="logo.png"/> <!-- Adiciona a logo na aba do navegador -->
         <title>7 Maravilhas do Mundo</title>
+        <script>
+        // Verifica se o item 'usuarioLogado' NÃO existe no localStorage
+        if (!localStorage.getItem('usuarioLogado')) {
+            // Se não existir, o usuário não está logado,
+            // então redireciona para a página de login.
+            window.location.href = "login.html";
+        }
+    </script>
+           
+        
     </head>
 <body>
-   
     <div class="pagina claro">
         <header class="main-header">
             <div class="top-bar">

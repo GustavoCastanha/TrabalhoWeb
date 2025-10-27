@@ -1,16 +1,20 @@
 function handleLogin(event) {
     // Impede o envio padrão do formulário
-    event.preventDefault(); 
+    event.preventDefault();
 
     const usuario = document.getElementById('username').value;
     const senha = document.getElementById('password').value;
 
     // Lógica de Verificação: Se as credenciais estiverem corretas...
     if (usuario === "admin" && senha === "123") {
-        
+
+        // ---- LINHA ADICIONADA ----
+        // Salva no navegador que o login foi feito com sucesso
+        localStorage.setItem('usuarioLogado', 'true');
+
         // Redireciona para a página de conteúdo principal (index.html)
-        window.location.href = "index.html"; 
-        
+        window.location.href = "index.html";
+
     } else {
         alert("Usuário ou senha incorretos.");
     }
