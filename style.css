@@ -441,6 +441,14 @@ em {
     flex-grow: 1; /* Faz a imagem crescer para ocupar o espaço vertical */
 }
 
+.imagem_colosso img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 10px; /* Arredonda os cantos da imagem */
+    flex-grow: 1; /* Faz a imagem crescer para ocupar o espaço vertical */
+}
+
 .imagem_principal figcaption {
     padding-top: 10px; /* Espaço entre a imagem e a legenda */
 }
@@ -452,12 +460,6 @@ em {
     min-height: 350px; /* Altura mínima para o mapa ser visível */
     border-radius: 10px; /* Arredonda os cantos do mapa */
     overflow: hidden; /* Essencial para o iframe respeitar as bordas arredondadas */
-}
-
-.mapa-container iframe {
-    width: 240px;
-    height: 500px;
-    border: none; /* Remove a borda padrão do iframe */
 }
 
 
@@ -472,5 +474,6 @@ em {
     width: 100%;    /* Ocupa toda a largura do container pai */
     height: 100%;   /* Ocupa toda a altura do container pai */
     border: none;   /* Remove qualquer borda */
-}       
-/* teste */
+}
+
+
