@@ -27,7 +27,6 @@ body {
     padding-top: 77px; 
 }
 
-
 .main-header {
     position: fixed;
     top: 0;
@@ -622,9 +621,172 @@ em {
 }
 
 .claro.escuro .rodape a {
-    color: black
+    color: black;
 }
 
 .claro.escuro .rodape a:hover {
     color: #e57373;
+}
+
+/* --- ESTILOS PARA COMENTÁRIOS --- */
+
+/* Botão Flutuante (FAB) */
+.comentarios-btn {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem; /* Posicionado à esquerda para não conflitar com o botão de tema */
+    width: 50px;
+    height: 50px;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.comentarios-btn:hover {
+    background: #2980b9; /* Um tom mais escuro no hover */
+    transform: scale(1.1);
+}
+
+/* Barra Lateral de Comentários */
+.comentarios-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px; /* Largura da barra */
+    height: 100%;
+    background: white; /* Fundo claro por padrão */
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 2000;
+    transform: translateX(100%); /* Escondida por padrão */
+    transition: transform 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Estado Aberto da Barra */
+.comentarios-sidebar.aberto {
+    transform: translateX(0);
+}
+
+/* Cabeçalho da Barra */
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.sidebar-header h2 {
+    margin: 0;
+    color: var(--text-color);
+    text-align: left;
+}
+
+.fechar-comentarios {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.fechar-comentarios:hover {
+    color: var(--accent-color);
+}
+
+/* Lista de Comentários */
+.comentarios-lista {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding-right: 10px; /* Espaço para a barra de rolagem */
+}
+
+.comentario-exemplo {
+    background: #f4f4f4;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-style: italic;
+    color: #555;
+    border-left: 3px solid var(--accent-color);
+}
+
+/* Formulário de Comentários */
+.comentarios-form input,
+.comentarios-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.comentarios-form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.comentarios-form button {
+    width: 100%;
+    padding: 10px;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.comentarios-form button:hover {
+    background: #2980b9;
+}
+
+/* --- ESTILOS DO TEMA ESCURO PARA COMENTÁRIOS --- */
+
+.claro.escuro .comentarios-sidebar {
+    background: linear-gradient(45deg, #484e51, #1b4f69);
+    box-shadow: -4px 0 10px rgba(193, 62, 62, 0.6);
+}
+
+.claro.escuro .sidebar-header h2,
+.claro.escuro .fechar-comentarios {
+    color: var(--text-color);
+}
+
+.claro.escuro .comentario-exemplo {
+    background: #2c2c2c; /* Fundo do comentário escuro */
+    color: #ccc;
+    border-left-color: var(--accent-color);
+}
+
+.claro.escuro .comentarios-form input,
+.claro.escuro .comentarios-form textarea {
+    background: #333;
+    color: var(--text-color);
+    border-color: #555;
+}
+
+.claro.escuro .comentario-item {
+    color: black;
+}
+
+.claro.escuro .comentarios-form {
+     text-decoration: underline;
 }

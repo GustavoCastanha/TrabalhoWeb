@@ -8,6 +8,7 @@
         <title>7 Maravilhas do Mundo</title>
     </head>
 <body>
+   
     <div class="pagina claro">
         <header class="main-header">
             <div class="top-bar">
@@ -40,11 +41,13 @@
                 7 Maravilhas do Mundo Antigo
             </h2>
             <p class="diferença" id="antigo">
-                Criadas entre 2500 a.C. e 200 a.C., essas maravilhas foram selecionadas pelos gregos antigos como exemplos máximos da
-                arquitetura e engenharia de seu tempo. Eram construções monumentais, feitas principalmente em pedra e mármore, que refletiam o poder 
-                e a criatividade humana. Infelizmente, quase todas foram destruídas pelo tempo, guerras e desastres naturais. A única que ainda existe
-                é a <strong>Pirâmide de Quéops, no Egito</strong>. Entre as outras, destacam-se os <em>Jardins Suspensos</em> da Babilônia, o <em>Colosso de Rodes</em>
-                e o <em>Farol de Alexandria.</em>
+                Criadas entre 2500 a.C. e 200 a.C., essas maravilhas refletem o auge da arquitetura e engenharia do mundo antigo, 
+                demonstrando habilidade técnica, riqueza e poder dos povos que as construíram. Eram construções monumentais em pedra
+                e mármore, cada uma com funções e significados distintos: a <strong>Pirâmide de Quéops, no Egito</strong>, servia
+                como túmulo real e símbolo da eternidade; os <em>Jardins Suspensos</em> da Babilônia encantavam pela beleza e pela
+                inovação em irrigação; o <em>Colosso de Rodes</em> comemorava vitórias militares e protegia o porto; e o <em>Farol
+                de Alexandria</em> guiava navegadores com sua impressionante altura. A maioria desapareceu devido a desastres naturais
+                e conflitos, mas permanecem na memória como exemplos máximos da criatividade e da ambição humanas.
             </p>
             
             <h1 class="titulo_maravilha">
@@ -436,7 +439,28 @@
         <div class="tema">
                 <span id="lua">&#127769;</span>
                 <span id="sol">&#9728;</span>
+        </div>
+        <div id="comentarios-btn" class="comentarios-btn">
+        <!-- Ícone de balão de fala -->
+        <span>💬</span>
+        </div>
+
+        <!-- Barra Lateral de Comentários -->
+        <aside id="comentarios-sidebar" class="comentarios-sidebar">
+            <div class="sidebar-header">
+                <h2>Comentários</h2>
+                <button id="fechar-comentarios" class="fechar-comentarios">X</button>
             </div>
+            <div class="comentarios-lista">
+                <!-- Comentários serão inseridos aqui -->
+                <p class="comentario-exemplo">Nenhum comentário ainda. Seja o primeiro!</p>
+            </div>
+            <div class="comentarios-form">
+                <input type="text" placeholder="Seu nome">
+                <textarea placeholder="Seu comentário..."></textarea>
+                <button>Enviar Comentário</button>
+            </div>
+    </aside>
         <footer class="rodape" id="contato">
             <p><strong>Feito por Gustavo Castanha</strong></p>
             <p>Email: <a href="mailto:gustavo.castanha1@hotmail.com">gustavo.castanha1@hotmail.com</a></p>
