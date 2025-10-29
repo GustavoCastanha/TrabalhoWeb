@@ -5,8 +5,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
-body {
+body { /* define o corpo da página ocupando toda a altura da tela e centralizando o conteúdo */
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -14,111 +13,62 @@ body {
     overflow: hidden;
 }
 
-/* 1. O Contêiner do Slideshow */
-.slideshow-background {
+.slidefundo { /* contêiner fixo que mantém as imagens do fundo (slide) */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: -1; /* fica atrás do conteúdo */
 }
 
-/* 2. Estilos Comuns para as Imagens (Com Movimento) */
-.slide-image {
+.slide-image { /* estilo base das imagens do slide */
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    
-    /* Aumenta um pouco para permitir o movimento, mas menos que 110% para minimizar a perda */
-    background-size: 105% 105%; 
+    background-size: 105% 105%; /* imagem um pouco maior para permitir movimento */
     background-position: center;
-    
-    opacity: 0; 
-    
-    /* Combina a Transição (60s) e o Movimento (30s) */
+    opacity: 0; /* começa invisível */
     animation: imageAnimation 35s infinite, gradientBG 30s ease infinite;
 }
 
-/* 3. Definir as Imagens e o Delay (6 imagens, 60s de ciclo total) */
-/* Substitua os nomes das imagens pelos seus arquivos! */
-/* 3. Definir as Imagens e o Delay (6 imagens, 60s de ciclo total) */
-#slide1 {
-    background-image: url('img/rio.jpg');
-}
+/* define cada imagem do slide e o tempo de início (delay) */
+#slide1 { background-image: url('img/rio.jpg'); }
+#slide2 { background-image: url('img/machu.jpg'); animation-delay: 5s, 0s; }
+#slide3 { background-image: url('img/chichen.jpg'); animation-delay: 10s, 0s; }
+#slide4 { background-image: url('img/china.jpg'); animation-delay: 15s, 0s; }
+#slide5 { background-image: url('img/petra.jpg'); animation-delay: 20s, 0s; }
+#slide6 { background-image: url('img/coliseu.jpg'); animation-delay: 25s, 0s; }
+#slide7 { background-image: url('img/taj.jpg'); animation-delay: 30s, 0s; }
 
-#slide2 {
-    background-image: url('img/machu.jpg');
-    animation-delay: 5s, 0s; 
-}
-
-#slide3 {
-    background-image: url('img/chichen.jpg');
-    animation-delay: 10s, 0s; 
-}
-
-#slide4 {
-    background-image: url('img/china.jpg');
-    animation-delay: 15s, 0s; 
-}
-
-#slide5 {
-    background-image: url('img/petra.jpg');
-    animation-delay: 20s, 0s; 
-}
-
-#slide6 {
-    background-image: url('img/coliseu.jpg');
-    animation-delay: 25s, 0s; 
-}
-
-#slide7 {
-    background-image: url('img/taj.jpg');
-    animation-delay: 30s, 0s; 
-}
-
-/* 4. A Animação de Transição (imageAnimation) */
-@keyframes imageAnimation {
-    /* 0% a 2%: Aparece (Fade-in) */
-    0% { opacity: 0; } 
-    2% { opacity: 1; } 
-    
-    /* 14% a 16%: Desaparece (Fade-out) */
-    14% { opacity: 1 } 
-    16% { opacity: 0 } 
-    
-    /* 16% a 100%: Fica invisível até o próximo ciclo */
+@keyframes imageAnimation { /* animação que faz as imagens aparecerem e desaparecerem suavemente */
+    0% { opacity: 0; }
+    2% { opacity: 1; }
+    14% { opacity: 1 }
+    16% { opacity: 0 }
     100% { opacity: 0 }
 }
 
-/* 5. A Animação de Movimento (gradientBG) - Sua animação original */
-@keyframes gradientBG {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+@keyframes gradientBG { /* animação que movimenta o plano de fundo para criar um leve efeito dinâmico */
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-/* 6. Opcional: Overlay escuro */
-.slideshow-background::after {
-    content: '';
+.imagemFundo::after { /* camada escura sobre a imagem de fundo para melhorar o contraste */
+    content: ''; 
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(26, 20, 20, 0.4);
     z-index: 0;
 }
 
-.menu_login {
+.menu_login { /* caixa principal do formulário de login */
     position: relative;
     width: 380px;
     padding: 40px;
@@ -131,12 +81,13 @@ body {
     overflow: hidden;
 }
 
-.menu_login::before {
+
+.menu_login::before { /* efeito de brilho que passa pela caixa ao passar o mouse */
     content: '';
     position: absolute;
     top: 0;
     left: -100%;
-    width: 100%;   
+    width: 100%;
     height: 100%;
     background: rgba(255, 255, 255, 0.05);
     transform: skewX(-15deg);
@@ -148,18 +99,18 @@ body {
     left: 120%;
 }
 
-.menu_login h2 {
+.menu_login h2 { /* título do formulário */
     color: #fff;
     font-size: 28px;
-    font-weight: 600;  
+    font-weight: 600;
     text-align: center;
     letter-spacing: 1px;
     margin-bottom: 40px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.input-login {
-    position: relative;
+.input-login { /* campo de entrada com rótulo flutuante */
+    position: relative; 
     margin-bottom: 30px;
 }
 
@@ -173,19 +124,19 @@ body {
     font-size: 16px;
     color: #fff;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;  
+    transition: all 0.3s ease;
 }
 
 .input-login input::placeholder {
    color: rgba(255, 255, 255, 0.7);
 }
 
-.input-login input:focus {
+.input-login input:focus { /* muda o estilo quando o campo está em foco */
     background: rgba(255, 255, 255, 0.3);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-.input-login label {
+.input-login label { /* rótulo do campo (label) */
     position: absolute;
     top: 50%;
     left: 20px;
@@ -196,7 +147,7 @@ body {
     font-size: 16px;
 }
 
-.input-login input:focus + label,
+.input-login input:focus + label, /* move o label para cima quando o campo é preenchido ou focado */
 .input-login input:valid + label {
     top: 0;
     left: 15px;
@@ -207,13 +158,13 @@ body {
     border-radius: 10px;
 }
 
-.esquece-senha {
+.esquece-senha { /* área "lembrar senha" e "esqueceu a senha" */
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 25px;
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.8)
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .esquece-senha label {
@@ -227,7 +178,7 @@ body {
     accent-color: #fff;
 }
 
-.esquece-senha a {
+.esquece-senha a { /* link "esqueceu a senha" */
     color: #fff;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -236,7 +187,8 @@ body {
 .esquece-senha a:hover {
     text-decoration: underline;
 }
-.login-btn {
+
+.login-btn { /* botão de login */
     width: 100%;
     padding: 15px;
     background: rgba(255, 255, 255, 0.3);
@@ -251,82 +203,81 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.01);
 }
 
-.login-btn:hover {
+.login-btn:hover { /* link para registrar-se */
     background: rgba(255, 255, 255, 0.4);
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
 }
-.registrar-link {
+
+.registrar-link { /* link para registrar-se */
     text-align: center;
     margin-top: 25px;
     color: rgba(255, 255, 255, 0.8);
     font-size: 14px;
 }
+
 .registrar-link a {
     color: #fff;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
 }
+
 .registrar-link a:hover {
     text-decoration: underline;
 }
 
-
-.info {
-    position: fixed; /* Tira o elemento do fluxo normal e o fixa na tela */           
-    bottom: 20px;    /* Distância da parte de baixo da tela */
-    left: 20px; 
-    cursor: pointer;         /* Distância do lado esquerdo da tela   /* Garante que o ícone fique na frente de outros elementos */ 
+.info { /* ícone de informações❕ fixado no canto inferior esquerdo */
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    cursor: pointer;
 }
 
 .dados {
-    font-size: 28px; /* <-- Altere aqui para aumentar ou diminuir o ícone */
+    font-size: 28px;
     display: block;
     line-height: 1;
 }
 
-.info::after {
-    content: attr(data-tooltip); /* Pega o texto do atributo 'data-tooltip' no HTML */
+.info::after { /* define o balão de texto ❕ */
+    content: attr(data-tooltip);
     position: absolute;
-    bottom: 120%; /* Posiciona o balão ACIMA do ícone */
-    left: 0;      /* Alinha o início do balão com o início do ícone */
+    bottom: 120%;
+    left: 0;
     background-color: #333;
     color: #fff;
     padding: 10px 15px;
     border-radius: 8px;
     font-size: 1rem;
-    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+    white-space: normal;
+    max-width: 250px;
+    text-align: left;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, transform 0.3s ease;
-    transform: translateY(10px); /* Começa um pouco para baixo */
-    white-space: normal;    /* 1. Permite que o texto tenha múltiplas linhas */
-    max-width: 250px;       /* 2. Define a largura máxima antes do texto quebrar */
-    text-align: left;
-    
-
+    transform: translateY(10px);
 }
 
-.info::before {
+
+.info::before { /* triangulo que aponta para o ícone */
     content: '';
     position: absolute;
     bottom: 100%;
     left: 10px;
-    border-width: 6px;   
-    border-style: solid;   
-    border-color: #333 transparent transparent transparent;       
+    border-width: 6px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, transform 0.3s ease;
-    transform: translateY(10px);   
+    transform: translateY(10px);
 }
 
-.info:hover::after,
+.info:hover::after, /* mostra os dados para o login quando o usuário passa o mouse sobre o ícone */
 .info:hover::before {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0); /* Sobe suavemente para a posição final */
-    
+    transform: translateY(0);
 }

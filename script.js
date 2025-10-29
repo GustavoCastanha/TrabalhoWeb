@@ -5,26 +5,25 @@ function handleLogin(event) {
     const usuario = document.getElementById('username').value;
     const senha = document.getElementById('password').value;
 
-    // Lógica de Verificação: Se as credenciais estiverem corretas...
-    if (usuario === "admin" && senha === "123") {
+    if (usuario === "admin" && senha === "123") { // Lógica de Verificação: se o usário e a senha estão corretas
 
-        // ---- LINHA ADICIONADA ----
-        // Salva no navegador que o login foi feito com sucesso
-        localStorage.setItem('usuarioLogado', 'true');
+        localStorage.setItem('usuarioLogado', 'true'); // Salva na storage que o login foi feito com sucesso
 
-        // Redireciona para a página de conteúdo principal (index.html)
-        window.location.href = "index.html";
+        window.location.href = "index.html"; //se estiver com o login valido, sera direcinado até o index.html
 
     } else {
         alert("Usuário ou senha incorretos.");
     }
 }
 
+//Criado as const para dar funcionalidade aos botões da página Escuro/Claro
+
 const lua = document.getElementById("lua");
 const sol = document.getElementById("sol");
 const pagina = document.querySelector(".pagina");
 
-// Elementos do novo recurso de comentários
+//Criado as const para dar funcionalidade para os elementos dos comentários
+
 const btnComentarios = document.getElementById("comentarios-btn");
 const sidebarComentarios = document.getElementById("comentarios-sidebar");
 const btnFechar = document.getElementById("fechar-comentarios");
@@ -34,43 +33,35 @@ const inputNome = formComentarios.querySelector("input[type='text']");
 const textareaComentario = formComentarios.querySelector("textarea");
 const btnEnviar = formComentarios.querySelector("button");
 
-// --- Lógica de Tema Claro/Escuro ---
 
-// Começa com modo claro
-sol.style.display = "none"; 
+sol.style.display = "none";  // Começa com modo claro
 
-// Clicar na lua -> muda para modo escuro
-lua.addEventListener("click", () => {
+
+lua.addEventListener("click", () => { // Clicar na lua -> muda para modo escuro
     pagina.classList.add("escuro");
     lua.style.display = "none";
     sol.style.display = "inline";
 });
 
-// Clicar no sol -> volta para modo claro
-sol.addEventListener("click", () => {
+sol.addEventListener("click", () => { // Clicar no sol -> volta para modo claro
     pagina.classList.remove("escuro");
     sol.style.display = "none";
     lua.style.display = "inline";
 });
 
-// --- Lógica de Comentários com LocalStorage ---
+function renderizarComentarios() { //Função para carregar e renderizar comentários
 
-// 1. Função para carregar e renderizar comentários
-function renderizarComentarios() {
-    // Pega os comentários do LocalStorage ou um array vazio se não houver
-    const comentarios = JSON.parse(localStorage.getItem("comentarios")) || [];
-    
-    // Limpa a lista atual
-    comentariosLista.innerHTML = "";
+    const comentarios = JSON.parse(localStorage.getItem("comentarios")) || []; // Pega os comentários do LocalStorage ou um array vazio se não houver
+
+    comentariosLista.innerHTML = "";  // Limpa a lista atual
 
     if (comentarios.length === 0) {
         comentariosLista.innerHTML = '<p class="comentario-exemplo">Nenhum comentário ainda. Seja o primeiro!</p>';
         return;
     }
 
-    // Cria o HTML para cada comentário
-    comentarios.forEach(comentario => {
-        const divComentario = document.createElement("div"); 
+    comentarios.forEach(comentario => {  // Cria o HTML para cada comentário
+        const divComentario = document.createElement("div");
         divComentario.classList.add("comentario-item");
         divComentario.innerHTML = `
             <strong>${comentario.nome}</strong>
@@ -81,8 +72,7 @@ function renderizarComentarios() {
     });
 }
 
-// 2. Função para salvar um novo comentário
-btnEnviar.addEventListener("click", (e) => {
+btnEnviar.addEventListener("click", (e) => { //Função para salvar um novo comentário
     e.preventDefault(); // Impede o envio padrão do formulário
 
     const nome = inputNome.value.trim();
@@ -93,8 +83,7 @@ btnEnviar.addEventListener("click", (e) => {
         return;
     }
 
-    // Formata a data
-    const data = new Date().toLocaleDateString("pt-BR", {
+    const data = new Date().toLocaleDateString("pt-BR", {  // Formata a data que foi inserido o comentario
         day: "2-digit",
         month: "2-digit",
         year: "numeric",
@@ -104,28 +93,22 @@ btnEnviar.addEventListener("click", (e) => {
 
     const novoComentario = { nome, texto, data };
 
-    // Pega os comentários existentes, adiciona o novo e salva de volta
-    const comentarios = JSON.parse(localStorage.getItem("comentarios")) || [];
+    const comentarios = JSON.parse(localStorage.getItem("comentarios")) || []; // Pega os comentários existentes, adiciona o novo e salva de volta
     comentarios.push(novoComentario);
     localStorage.setItem("comentarios", JSON.stringify(comentarios));
 
-    // Limpa o formulário e atualiza a lista
-    inputNome.value = "";
+    inputNome.value = "";  // Limpa o formulário e atualiza a lista
     textareaComentario.value = "";
     renderizarComentarios();
 });
 
-// 3. Lógica para abrir/fechar a barra lateral
-btnComentarios.addEventListener("click", () => {
+btnComentarios.addEventListener("click", () => { //Lógica para abrir/fechar a barra lateral
     sidebarComentarios.classList.add("aberto");
-    // Garante que a lista esteja atualizada ao abrir
-    renderizarComentarios(); 
+    renderizarComentarios();  // Garante que a lista esteja atualizada ao abrir
 });
 
 btnFechar.addEventListener("click", () => {
     sidebarComentarios.classList.remove("aberto");
 });
 
-// 4. Inicializa a lista de comentários ao carregar a página
-document.addEventListener("DOMContentLoaded", renderizarComentarios);
-
+document.addEventListener("DOMContentLoaded", renderizarComentarios); //Inicializa a lista de comentários ao carregar a página

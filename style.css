@@ -1,22 +1,23 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho total do elemento */
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Anima a rolagem para âncoras (links internos) */
 }
 
 
 :root {
-    --primary-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    --header-bg: rgba(255, 255, 255, 0.95);
-    --text-color: #2c3e50;
-    --accent-color: #3498db;
-    --border-color: #bdc3c7;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --text-font: 'Georgia', 'Times New Roman', serif;
+    /* Definição de Variáveis CSS para o Tema Claro (Padrão) */
+    --primary-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* Fundo principal com gradiente suave */
+    --header-bg: rgba(255, 255, 255, 0.95); /* Fundo do cabeçalho semi-transparente */
+    --text-color: #2c3e50; /* Cor principal do texto */
+    --accent-color: #3498db; /* Cor de destaque (links, bordas, etc.) */
+    --border-color: #bdc3c7; /* Cor para bordas e divisores */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra padrão para elementos */
+    --text-font: 'Georgia', 'Times New Roman', serif; /* Fonte principal */
 }
 
 body {
@@ -24,35 +25,34 @@ body {
     font-family: var(--text-font);
     color: var(--text-color);
     line-height: 1.6;
-    padding-top: 77px; 
+    padding-top: 77px; /* Espaço para o cabeçalho fixo */
 }
-
-.main-header {
-    position: fixed;
+.main-header {     
+    position: fixed; /* Fixa o cabeçalho no topo da tela */
     top: 0;
     width: 100%;
-    z-index: 1001;
+    z-index: 1001; /* Garante que o cabeçalho fique acima de outros elementos */
     background: var(--header-bg);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /* Efeito de vidro fosco (translucidez) */
     box-shadow: var(--shadow);
 }
 
 
-.top-bar {
+.top-bar {   
   position: relative; 
-  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%); /* Gradiente colorido para a barra superior */
   color: white;
   display: flex;
   align-items: center;
   padding: 5px 20px;
   height: 50px;
-  overflow: visible;
+  overflow: visible; /* Permite que a logo flutue para fora */
 }
 
 
 .logo_container {
   position: absolute;
-  top: -30px; 
+  top: -30px; /* Move o container da logo para cima, sobrepondo a top-bar */
   left: 20px;
   text-align: center;  
   margin: 30px 0;
@@ -63,14 +63,14 @@ body {
 .logo {
     width: 120px;
     height: auto;
-    border-radius: 50%;
+    border-radius: 50%; /* Transforma a imagem em círculo */
     box-shadow: var(--shadow);
     position: relative;
     
 }
 
 .logo:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Efeito de zoom na logo ao passar o mouse */
 }
 
 .title-text {
@@ -116,22 +116,21 @@ nav a {
 nav a:hover {
     background: var(--accent-color);
     color: white;
-    transform: translateY(-2px);
+    transform: translateY(-2px); /* Efeito de leve levantamento */
     box-shadow: var(--shadow);
     margin-top: 10px; /* A barra branca desce um pouco ao passar o mouse */
 }
 
-
 main {
-    max-width: 1000px;
+    max-width: 1000px; /* Limita a largura do conteúdo para melhor leitura e deixa mais bonito */
     margin: 0 auto;
     padding: 0 20px;
 }
 
 hr {
     border: none;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    height: 3px;  
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent); /* Linha divisória com gradiente */
     margin: 30px 0;
 }
 
@@ -144,10 +143,10 @@ h1, h2 {
 
 .comeco {
     font-size: 2.2rem;
-    background: linear-gradient(45deg, #667eea, #764ba2);
+    background: linear-gradient(45deg, #667eea, #764ba2); /*Cor do texto com a mistura das cores*/
     background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;   
+    -webkit-text-fill-color: transparent; /*O texto começa mais forte e termina mais claro*/
     text-shadow: none;
 }
 
@@ -160,12 +159,13 @@ h1, h2 {
     background: rgba(255, 255, 255, 0.7);
     border-radius: 15px;
     box-shadow: var(--shadow);
+    border-left: 5px solid var(--accent-color);
 }
 
 .introdução {
     font-size: 2rem;
     color: var(--accent-color);
-    border-bottom: 3px solid var(--accent-color);
+    border-bottom: 3px solid var(--accent-color); /*Cria uma barra em baixo do texto*/
     padding-bottom: 10px;
     display: inline-block;
     width: 100%;
@@ -179,7 +179,7 @@ h1, h2 {
     box-shadow: var(--shadow);
     font-size: 1.1rem;
     text-align: justify;
-    border-left: 5px solid var(--accent-color);
+    border-left: 5px solid var(--accent-color); /* Borda de destaque lateral */
 }
 
 .titulo_maravilha {
@@ -202,7 +202,7 @@ h1, h2 {
     background: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     box-shadow: var(--shadow);
-    border-left: 5px solid var(--accent-color);
+    border-left: 5px solid var(--accent-color);  /* Borda de destaque lateral */
 }
 
 figure {
@@ -233,7 +233,6 @@ figcaption {
     color: #7f8c8d;
     font-size: 1rem;
 }
-
 
 .descricao {
     background: white;
@@ -269,7 +268,7 @@ em {
     font-style: italic;
 }
 
-.rodape {
+.rodape { /* Estilos do Rodapé */
     background: linear-gradient(45deg, #2c3e50, #34495e);
     color: white;
     text-align: center;
@@ -294,136 +293,19 @@ em {
     text-decoration: underline;
 }
 
-
-@media (max-width: 768px) {
-    body {
-        padding-top: 100px; 
-    }
-    
-    .top-bar {
-        height: 50px;
-        padding: 8px 15px;
-    }
-    
-    .title-text {
-        font-size: 1.4rem;
-    }
-    
-    .logo {
-        width: 35px;
-        height: 35px;
-    }
-    
-    .menu {
-        padding: 6px 15px;
-    }
-    
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-    
-    nav a {
-        font-size: 0.8rem;
-        padding: 4px 8px;
-    }
-    
-    .comeco {
-        font-size: 1.8rem;
-    }
-    
-    .titulo_maravilha {
-        font-size: 2rem;
-    }
-    
-    .wonders {
-        font-size: 1.5rem;
-    }
-    
-    .descricao, .diferença {
-        padding: 20px;
-        margin: 20px 10px;
-    }
-    
-    figure {
-        margin: 20px 10px;
-        padding: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        padding-top: 90px; 
-    }
-    
-    .top-bar {
-        height: 45px;
-        padding: 6px 10px;
-        flex-direction: column;
-        justify-content: center;
-        gap: 5px;
-    }
-    
-    .logo_container {
-        margin-right: 0;
-    }
-    
-    .title-text {
-        font-size: 1.1rem;
-        text-align: center;
-    }
-    
-    .logo {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .menu {
-        padding: 4px 10px;
-    }
-    
-    nav ul {
-        flex-direction: column;
-        gap: 5px;
-    }
-    
-    nav a {
-        font-size: 0.75rem;
-        padding: 3px 6px;
-    }
-    
-    .comeco {
-        font-size: 1.5rem;
-    }
-    
-    .titulo_maravilha {
-        font-size: 1.7rem;
-    }
-    
-    .wonders {
-        font-size: 1.3rem;
-    }
-}
-
-/* 1. ESTILO DO CARD PRINCIPAL */
-.container-mapa-e-imagem {
-    /* --- Estilos do Card --- */
+.container-mapa-e-imagem { /*ESTILO DO CARD PRINCIPAL */
     background: #ffffff; /* Fundo branco para o card */
     border-radius: 15px; /* Bordas bem arredondadas */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidade */
     padding: 20px; /* Espaçamento interno para o conteúdo não colar na borda */
     border: 1px solid #e7e7e7; /* Borda sutil (opcional) */
-
-    /* --- Layout Flexbox --- */
     display: flex; /* ATIVA O MODO LADO A LADO */
     gap: 20px; /* Espaço entre a imagem e o mapa */
     align-items: stretch; /* Garante que ambos tenham a mesma altura */
     margin-bottom: 30px; /* Espaço abaixo do card */
 }
 
-/* 2. AJUSTES PARA A IMAGEM DENTRO DO CARD */
-.container-mapa-e-imagem .imagem_principal {
+.container-mapa-e-imagem .imagem_principal { /*AJUSTES PARA A IMAGEM DENTRO DO CARD */
     flex: 1; /* Faz a imagem ocupar metade do espaço disponível */
     margin: 0; /* Remove margens padrão que podem quebrar o layout */
     padding: 0; /* Remove preenchimento padrão */
@@ -451,63 +333,50 @@ em {
     padding-top: 10px; /* Espaço entre a imagem e a legenda */
 }
 
-
-/* 3. AJUSTES PARA O MAPA DENTRO DO CARD */
-.container-mapa-e-imagem .mapa-container {
+.container-mapa-e-imagem .mapa-container { /* 3. AJUSTES PARA O MAPA DENTRO DO CARD */
     flex: -10; /* Faz o mapa ocupar a outra metade do espaço */
     min-height: 350px; /* Altura mínima para o mapa ser visível */
     border-radius: 10px; /* Arredonda os cantos do mapa */
     overflow: hidden; /* Essencial para o iframe respeitar as bordas arredondadas */
 }
 
-
-/* 4. RESPONSIVIDADE (PARA CELULAR) */
-@media (max-width: 768px) {
-    .container-mapa-e-imagem {
-        flex-direction: column; /* Coloca o mapa embaixo da imagem */
-    }
-}
-
-.mapa-container iframe {
+.mapa-container iframe { /* Estilos para o Iframe do Mapa */
     width: 100%;    /* Ocupa toda a largura do container pai */
     height: 100%;   /* Ocupa toda a altura do container pai */
     border: none;   /* Remove qualquer borda */
 }
-
-.pagina {
-   
-}
-
-.tema {
+.tema { /* Contêiner dos botões de tema */
     position: fixed;
     bottom: 1rem;
     right: 1rem;
     display: flex;
 }
 
-/* Estiliza o ícone da lua (tema escuro) */
-.tema #lua {
-    font-size: 24px;
+
+.tema #lua { /* Estiliza o ícone da lua (tema escuro) */
+    font-size: 35px;
+    cursor: pointer;
+    margin-right: 0.5rem; /*Define a distancia dele para a borda lateral da página*/
+}
+
+
+.tema #sol { /* Estiliza o ícone do sol (tema claro) */
+    font-size: 35px;
+    color: #ffd700; /* Amarelo mais suave */
     cursor: pointer;
     margin-right: 0.5rem;
 }
 
-/* Estiliza o ícone do sol (tema claro) */
-.tema #sol {
-    font-size: 24px;
-    color: #ffd700; /* Amarelo mais suave */
-    cursor: pointer;
-}
 
-/* Adiciona um efeito de hover nos ícones */
-.tema #lua:hover,
+.tema #lua:hover, /* Adiciona um efeito de hover nos ícones */
 .tema #sol:hover {
     transform: scale(1.5);
     transition: transform 0.5s ease;
 }
 
 
-.claro.escuro {
+
+.claro.escuro {   /*Definições de quando o tema escuro é selecionado*/
     --primary-bg: #1a1a1a; /* Fundo principal escuro e sólido */
     --header-bg: rgba(26, 26, 26, 0.95);
     --text-color: #f0f0f0;
@@ -516,14 +385,14 @@ em {
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
 }
 
-/* Fundo geral e textos */
-.claro.escuro body {
+
+.claro.escuro body {  /* Fundo geral e textos */
     background: var(--primary-bg);
     color: var(--text-color);
 }
 
-/* Cabeçalho e menu */
-.claro.escuro .main-header,
+
+.claro.escuro .main-header, /* Cabeçalho e menu */
 .claro.escuro .menu {
     background: var(--header-bg);
     box-shadow: var(--shadow);
@@ -531,11 +400,10 @@ em {
 
 .claro.escuro .top-bar {
     background: linear-gradient(45deg, #323537, #133b4f);
-    /* Removido: background: linear-gradient(45deg, #283e51, #485563); */
     color: #f0f0f0;
 }
 
-.claro.escuroe nav a {
+.claro.escuro nav a {
     color: var(--text-color);
 }
 
@@ -544,8 +412,7 @@ em {
     color: #e80303;
 }
 
-/* Cards, descrições, figuras e blocos de texto */
-.claro.escuro .descricao,
+.claro.escuro .descricao,  /* Cards, descrições, figuras e blocos de texto */
 .claro.escuro .diferença,
 .claro.escuro figure,
 .claro.escuro .container-mapa-e-imagem,
@@ -556,8 +423,7 @@ em {
     box-shadow: var(--shadow);
 }
 
-/* Legendas e detalhes */
-.claro.escuro figcaption {
+.claro.escuro figcaption {  /* Legendas e detalhes */
     color: #b0b0b0;
 }
 
@@ -569,8 +435,7 @@ em {
     color: #e57373;
 }
 
-/* Títulos */
-.claro.escuro h1,
+.claro.escuro h1,  /* Títulos */
 .claro.escuro h2,
 .claro.escuro .wonders,
 .claro.escuro .titulo_maravilha {
@@ -627,11 +492,7 @@ em {
 .claro.escuro .rodape a:hover {
     color: #e57373;
 }
-
-/* --- ESTILOS PARA COMENTÁRIOS --- */
-
-/* Botão Flutuante (FAB) */
-.comentarios-btn {
+.comentarios-btn { /*estiliza o botão 💬*/
     position: fixed;
     bottom: 1rem;
     left: 1rem; /* Posicionado à esquerda para não conflitar com o botão de tema */
@@ -655,8 +516,8 @@ em {
     transform: scale(1.1);
 }
 
-/* Barra Lateral de Comentários */
-.comentarios-sidebar {
+
+.comentarios-sidebar { /* Barra Lateral de Comentários */
     position: fixed;
     top: 0;
     right: 0;
@@ -673,13 +534,13 @@ em {
     box-sizing: border-box;
 }
 
-/* Estado Aberto da Barra */
-.comentarios-sidebar.aberto {
+
+.comentarios-sidebar.aberto { /* Estado Aberto da Barra (Controlado por JavaScript) */
     transform: translateX(0);
 }
 
-/* Cabeçalho da Barra */
-.sidebar-header {
+
+.sidebar-header {  /* Cabeçalho da Barra */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -707,8 +568,8 @@ em {
     color: var(--accent-color);
 }
 
-/* Lista de Comentários */
-.comentarios-lista {
+
+.comentarios-lista { /* Lista de Comentários */
     flex-grow: 1;
     overflow-y: auto;
     margin-bottom: 20px;
@@ -725,8 +586,8 @@ em {
     border-left: 3px solid var(--accent-color);
 }
 
-/* Formulário de Comentários */
-.comentarios-form input,
+
+.comentarios-form input, /* Formulário de Comentários */
 .comentarios-form textarea {
     width: 100%;
     padding: 10px;
@@ -758,9 +619,9 @@ em {
     background: #2980b9;
 }
 
-/* --- ESTILOS DO TEMA ESCURO PARA COMENTÁRIOS --- */
 
-.claro.escuro .comentarios-sidebar {
+
+.claro.escuro .comentarios-sidebar {   /* --- ESTILOS DO TEMA ESCURO PARA COMENTÁRIOS --- */
     background: linear-gradient(45deg, #484e51, #1b4f69);
     box-shadow: -4px 0 10px rgba(193, 62, 62, 0.6);
 }
@@ -789,4 +650,5 @@ em {
 
 .claro.escuro .comentarios-form {
      text-decoration: underline;
+
 }
