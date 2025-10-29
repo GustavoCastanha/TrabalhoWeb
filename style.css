@@ -324,9 +324,21 @@ em {
 .imagem_colosso img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
-    border-radius: 10px; /* Arredonda os cantos da imagem */
-    flex-grow: 1; /* Faz a imagem crescer para ocupar o espaço vertical */
+    object-fit: cover; /* Garant */
+    border-radius: 10px; /* Arredonda os cantos da imae que a imagem preencha o espaço sem distorcergem */
+    flex-grow: 0; /* Faz a imagem crescer para ocupar o espaço vertical */
+}
+.mapa-container-colosso{
+    flex: -10; /* Faz o mapa ocupar a outra metade do espaço */
+    min-height: 350px; /* Altura mínima para o mapa ser visível */
+    border-radius: 10px; /* Arredonda os cantos do mapa */
+    overflow: hidden; /* Essencial para o iframe respeitar as bordas arredondadas */
+}
+
+.mapa-container-colosso iframe {
+    width: 100%;    /* Ocupa toda a largura do container pai */
+    height: 100%;   /* Ocupa toda a altura do container pai */
+    border: none;  
 }
 
 .imagem_principal figcaption {
@@ -416,7 +428,7 @@ em {
 .claro.escuro .diferença,
 .claro.escuro figure,
 .claro.escuro .container-mapa-e-imagem,
-.claro.escuro .container-mapa-e-imagem-colosso {
+.claro.escuro {
     background: #1e1e1e;
     color: var(--text-color);
     border-color: var(--border-color);
@@ -473,7 +485,7 @@ em {
 
 .claro.escuro .comeco {
     font-size: 2.2rem;
-    background: linear-gradient(45deg, #484e51, #060809);
+    background: linear-gradient(45deg, #3d4e57, #00aaff);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
